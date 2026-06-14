@@ -19,7 +19,7 @@ export default function Navigation() {
     <motion.nav 
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className="fixed top-0 left-0 w-full z-50 px-6 py-3 flex items-center justify-between premium-glass border-b border-slate-900"
+      className="fixed top-0 left-0 w-full z-50 px-4 py-3 flex items-center justify-between premium-glass border-b border-slate-900"
     >
       <a href="#about" className="flex items-center gap-2 h-10 w-auto">
        <Image
@@ -32,7 +32,7 @@ export default function Navigation() {
         />
       </a>
 
-      <div className="hidden md:flex items-center gap-8 text-xs uppercase font-bold tracking-widest text-slate-400">
+      <div className="hidden md:flex items-center gap-6 text-xs uppercase font-bold tracking-widest text-slate-400">
         {navLinks.map((link) => (
           <a key={link.href} href={link.href} className="hover:text-orange-500 transition-colors">
             {link.label}
@@ -43,7 +43,7 @@ export default function Navigation() {
       <div className="flex items-center gap-3">
         <a
           href="#contact"
-          className="hidden md:inline-flex px-4 py-2.5 rounded text-xs font-bold uppercase tracking-wider text-white bg-orange-600 hover:bg-orange-700 transition-all duration-300"
+          className="hidden md:inline-flex px-3 py-2 rounded text-xs font-bold uppercase tracking-wider text-white bg-orange-600 hover:bg-orange-700 transition-all duration-300"
         >
           Request A Quote
         </a>
@@ -66,13 +66,13 @@ export default function Navigation() {
             exit={{ opacity: 0, y: -10 }}
             className="absolute inset-x-0 top-full z-40 bg-slate-950/95 border-t border-slate-900/80 backdrop-blur-md md:hidden"
           >
-            <div className="flex flex-col gap-4 px-6 py-5 text-sm uppercase tracking-widest text-slate-200">
+            <div className="flex flex-col gap-4 px-5 py-4 text-sm uppercase tracking-widest text-slate-200">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block rounded-xl px-4 py-3 hover:bg-slate-900/80 transition"
+                  className="block rounded-xl px-3 py-2.5 hover:bg-slate-900/80 transition"
                 >
                   {link.label}
                 </a>
@@ -80,7 +80,7 @@ export default function Navigation() {
               <a
                 href="#contact"
                 onClick={() => setMenuOpen(false)}
-                className="inline-flex w-full items-center justify-center rounded-xl bg-orange-600 px-4 py-3 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-orange-700"
+                className="inline-flex w-full items-center justify-center rounded-xl bg-orange-600 px-3 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-orange-700"
               >
                 Request A Quote
               </a>

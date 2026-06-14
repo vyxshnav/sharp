@@ -111,7 +111,7 @@ export default function Home() {
             <div className="rounded-[24px] overflow-hidden border border-slate-900/70 shadow-[0_30px_80px_-50px_rgba(15,23,42,0.8)]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.3400262198084!2d77.6917637!3d12.8212979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6c4e09f5db3b%3A0x6b77457788470a1a!2sSharp%20Polymers!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
-                className="w-full h-[320px] sm:h-[360px] bg-slate-950"
+                className="w-full h-[280px] sm:h-[320px] bg-slate-950"
                 allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

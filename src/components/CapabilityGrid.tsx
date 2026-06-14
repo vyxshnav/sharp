@@ -102,7 +102,7 @@ export default function CapabilityGrid() {
       {/* CORE SERVICES SECTION */}
       <div id="services" className="w-full">
         {/* Header section for core services */}
-        <div className="flex flex-col items-start text-left mb-16 max-w-xl">
+        <div className="flex flex-col items-start text-left mb-6 max-w-xl">
           <span className="text-xs uppercase font-mono font-bold tracking-[0.25em] text-orange-500 block mb-2">
             Capabilities
           </span>

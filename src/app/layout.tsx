@@ -13,8 +13,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SHARP Frontend",
-  description: "A modern Next.js landing page structure built in src/app.",
+  title: "Sharp Polymers",
+  description: "Sharp Polymers - Premium polymer OEM manufacturing and injection moulding solutions.",
+  openGraph: {
+    title: "Sharp Polymers",
+    description: "Sharp Polymers - Premium polymer OEM manufacturing and injection moulding solutions.",
+    siteName: "Sharp Polymers",
+    type: "website",
+    locale: "en_US",
+  },
 };
 
 export default function RootLayout({

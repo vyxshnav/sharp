@@ -115,13 +115,13 @@ export default function HeroSection() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="text-sm md:text-lg text-slate-400 max-w-3xl mx-auto mb-12 uppercase tracking-widest leading-relaxed"
+          className="text-sm sm:text-base md:text-lg text-slate-400 max-w-3xl mx-auto mb-3 uppercase tracking-widest leading-relaxed"
         >
           Driven by innovative experiences of <span className="text-white font-bold">Injection</span> and <span className="text-white font-bold">Blow Moulding</span>, Concept and Contract Manufacturing.
         </motion.p>
 
         {/* CLICKABLE SLIDER DOTS INTERACTIVE NAVIGATION */}
-        <div className="flex gap-2.5 mb-8 z-20">
+        <div className="flex gap-2.5 mb-5 z-20">
           {banners.map((_, idx) => (
             <button
               key={idx}
@@ -134,8 +134,8 @@ export default function HeroSection() {
           ))}
         </div>
 
-        <div className="flex gap-4 justify-center">
-          <a href="#services" className="px-6 py-3.5 rounded bg-orange-600 hover:bg-orange-700 text-xs font-bold uppercase tracking-widest text-white transition-all shadow-lg shadow-orange-600/10">
+        <div className="flex w-full justify-center">
+          <a href="#services" className="w-full sm:w-auto text-center px-4 py-2 rounded bg-orange-600 hover:bg-orange-700 text-xs sm:text-sm font-bold uppercase tracking-widest text-white transition-all shadow-lg shadow-orange-600/10">
             Our Services
           </a>
         </div>
