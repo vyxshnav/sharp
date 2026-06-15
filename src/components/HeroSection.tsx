@@ -22,7 +22,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section id="about" className="relative min-h-[85vh] md:min-h-screen flex flex-col justify-center items-center px-4 sm:px-5 pt-20 sm:pt-24 overflow-hidden">
+    <section id="about" className="relative min-h-screen flex flex-col justify-center items-center px-6 pt-24 overflow-hidden">
       
       {/* BACKGROUND BANNER SLIDER ENGINE */}
       <div className="absolute inset-0 z-0 bg-slate-950">
@@ -103,7 +103,7 @@ export default function HeroSection() {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="text-3xl sm:text-4xl md:text-6xl font-black tracking-tight text-white mb-8 leading-none uppercase"
+          className="text-4xl md:text-7xl font-black tracking-tight text-white mb-8 leading-none uppercase"
         >
           Welcome To <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500 glow-orange">
@@ -115,7 +115,7 @@ export default function HeroSection() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="text-sm sm:text-base md:text-lg text-slate-400 max-w-2xl mx-auto mb-4 uppercase tracking-widest leading-relaxed"
+          className="text-sm sm:text-base md:text-lg text-slate-400 max-w-3xl mx-auto mb-3 uppercase tracking-widest leading-relaxed"
         >
           Driven by innovative experiences of <span className="text-white font-bold">Injection</span> and <span className="text-white font-bold">Blow Moulding</span>, Concept and Contract Manufacturing.
         </motion.p>
