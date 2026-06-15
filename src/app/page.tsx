@@ -45,17 +45,17 @@ export default function Home() {
       <ExperienceTimeline />
 
       {/* CLIENTS GRID SECTION (CLEAN IMAGES ONLY) */}
-      <section id="clients" className="py-32 px-6 max-w-7xl mx-auto border-t border-slate-900/60">
-        <div className="text-center mb-16">
-          <h2 className="text-xs uppercase font-bold tracking-widest text-orange-500 mb-3">Partnerships</h2>
-          <p className="text-3xl font-black text-white tracking-tight uppercase">Trusted By Global Leaders</p>
+      <section id="clients" className="py-20 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto border-t border-slate-900/60">
+        <div className="text-center mb-10">
+          <h2 className="text-xs uppercase font-bold tracking-widest text-orange-500 mb-2">Partnerships</h2>
+          <p className="text-3xl sm:text-4xl font-black text-white tracking-tight uppercase">Trusted By Global Leaders</p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-5">
           {clientBrands.map((brand, idx) => (
             <div 
               key={idx} 
-              className="premium-glass h-24 p-4 flex flex-col items-center justify-center rounded-xl hover:border-slate-700 group transition-all duration-300 bg-slate-900/20 hover:bg-slate-900/60 relative overflow-hidden"
+              className="premium-glass h-24 sm:h-28 p-4 sm:p-5 flex flex-col items-center justify-center rounded-2xl hover:border-slate-700 group transition-all duration-300 bg-slate-900/20 hover:bg-slate-900/60 relative overflow-hidden"
             >
               {/* Clean logo display layer */}
               <div className="relative w-full h-full flex items-center justify-center opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 z-10">
@@ -73,10 +73,10 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 px-6 max-w-5xl mx-auto border-t border-slate-900">
-        <h2 className="text-xs uppercase font-bold tracking-widest text-orange-500 mb-12 text-center">Contact Us</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-xs tracking-wide">
-          <div className="premium-glass p-6 rounded-xl">
+      <section id="contact" className="py-14 sm:py-16 px-4 sm:px-6 max-w-5xl mx-auto border-t border-slate-900">
+        <h2 className="text-xs uppercase font-bold tracking-widest text-orange-500 mb-8 text-center">Contact Us</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center text-xs tracking-wide">
+          <div className="premium-glass p-5 rounded-xl">
             <p className="font-bold text-white mb-2 uppercase text-orange-500">Call Us</p>
             <p className="text-slate-400 font-mono">+91-98452-10705</p>
             <p className="text-slate-400 font-mono">+91-80-2783302</p>
@@ -95,11 +95,11 @@ export default function Home() {
       </section>
       
       {/* SMALL PREMIUM MAP CARD */}
-      <section className="py-16 px-6 max-w-5xl mx-auto">
+      <section className="py-10 sm:py-12 px-4 sm:px-6 max-w-5xl mx-auto">
         <div className="premium-glass relative overflow-hidden rounded-[32px] border border-slate-800/70 shadow-2xl shadow-slate-950/20">
           <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent" />
-          <div className="relative p-8 md:p-10">
-            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-6">
+          <div className="relative p-6 sm:p-8">
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-5">
               <div>
                 <p className="text-xs uppercase tracking-[0.35em] text-orange-500 font-semibold mb-2">Our Location</p>
                 <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight">Sharp Polymers, Bommasandra</h3>
