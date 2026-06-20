@@ -65,12 +65,12 @@ export default function Home() {
             const isAntylia = brand.name === 'Antylia Scientific';
             const isPricol = brand.name === 'Pricol';
             const sizeClass = isWipro
-              ? 'max-w-[120px] max-h-[90px] sm:max-w-[230px] sm:max-h-[140px] sm:scale-110'
+              ? 'max-w-[95px] max-h-[72px] sm:max-w-[230px] sm:max-h-[140px] sm:scale-110'
               : (isNavagen || isPricol)
-              ? 'max-w-[112px] max-h-[86px] sm:max-w-[200px] sm:max-h-[120px] sm:scale-105'
+              ? 'max-w-[90px] max-h-[68px] sm:max-w-[200px] sm:max-h-[120px] sm:scale-105'
               : isAntylia
-              ? 'max-w-[108px] max-h-[82px] sm:max-w-[160px] sm:max-h-[95px] sm:scale-105'
-              : 'max-w-[104px] max-h-[78px] sm:max-w-[140px] sm:max-h-[85px]';
+              ? 'max-w-[85px] max-h-[64px] sm:max-w-[160px] sm:max-h-[95px] sm:scale-105'
+              : 'max-w-[85px] max-h-[62px] sm:max-w-[140px] sm:max-h-[85px]';
 
             return (
               <motion.div
