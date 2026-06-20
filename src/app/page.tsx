@@ -58,19 +58,19 @@ export default function Home() {
           <p className="text-4xl sm:text-5xl font-black text-white tracking-tight uppercase mb-10">Trusted By Global Leaders</p>
         </motion.div>
 
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-6 sm:gap-4">
+        <div className="grid grid-cols-4 gap-3 sm:grid-cols-6 sm:gap-4">
           {clientBrands.map((brand, idx) => {
             const isWipro = brand.name === 'Wipro';
             const isNavagen = brand.name === 'Navagen';
             const isAntylia = brand.name === 'Antylia Scientific';
             const isPricol = brand.name === 'Pricol';
             const sizeClass = isWipro
-              ? 'max-w-[120px] max-h-[88px] sm:max-w-[230px] sm:max-h-[140px] sm:scale-110'
+              ? 'max-w-[90px] max-h-[58px] sm:max-w-[230px] sm:max-h-[140px] sm:scale-110'
               : (isNavagen || isPricol)
-              ? 'max-w-[112px] max-h-[82px] sm:max-w-[200px] sm:max-h-[120px] sm:scale-105'
+              ? 'max-w-[88px] max-h-[56px] sm:max-w-[200px] sm:max-h-[120px] sm:scale-105'
               : isAntylia
-              ? 'max-w-[108px] max-h-[78px] sm:max-w-[160px] sm:max-h-[95px] sm:scale-105'
-              : 'max-w-[104px] max-h-[74px] sm:max-w-[140px] sm:max-h-[85px]';
+              ? 'max-w-[84px] max-h-[54px] sm:max-w-[160px] sm:max-h-[95px] sm:scale-105'
+              : 'max-w-[80px] max-h-[52px] sm:max-w-[140px] sm:max-h-[85px]';
 
             return (
               <motion.div
@@ -80,7 +80,7 @@ export default function Home() {
                 whileHover={{ scale: 1.08, y: -5 }}
                 viewport={{ once: true, margin: '-30px' }}
                 transition={{ duration: 0.5, delay: idx * 0.04 }}
-                className="premium-glass h-36 sm:h-28 p-3 sm:p-4 flex items-center justify-center rounded-2xl group transition-all duration-300 relative overflow-hidden bg-gradient-to-br from-slate-950/95 via-slate-900/90 to-blue-950/40 border border-slate-700/70 hover:border-blue-500/30 shadow-[0_20px_50px_-30px_rgba(15,23,42,0.9)]"
+                className="premium-glass h-28 sm:h-28 p-3 sm:p-4 flex items-center justify-center rounded-2xl group transition-all duration-300 relative overflow-hidden bg-gradient-to-br from-slate-950/95 via-slate-900/90 to-blue-950/40 border border-slate-700/70 hover:border-blue-500/30 shadow-[0_20px_50px_-30px_rgba(15,23,42,0.9)]"
               >
                 <div className="relative w-full h-full flex items-center justify-center transition-all duration-300 z-10 group-hover:scale-105">
                   {brand.logo ? (
