@@ -138,14 +138,20 @@ export default function HeroSection() {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full">
-          <a href="#contact" className="w-full sm:w-auto text-center px-4 py-3 rounded bg-orange-600 hover:bg-orange-700 text-xs sm:text-sm font-bold uppercase tracking-widest text-white transition-all shadow-lg shadow-orange-600/10">
-            Request A Quote
-          </a>
-          <a href="#services" className="w-full sm:w-auto text-center px-4 py-3 rounded border border-slate-800 bg-slate-900/90 hover:bg-slate-800 text-xs sm:text-sm font-bold uppercase tracking-widest text-white transition-all shadow-lg shadow-slate-950/10">
-            Explore Services
-          </a>
-        </div>
+       <div className="flex flex-row gap-3 justify-center items-center w-full max-w-sm sm:max-w-none px-4 z-20">
+  <a 
+    href="#contact" 
+    className="flex-1 sm:flex-none text-center px-4 sm:px-6 py-3 rounded bg-orange-600 hover:bg-orange-700 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white transition-all shadow-lg shadow-orange-600/10 whitespace-nowrap"
+  >
+    Request A Quote
+  </a>
+  <a 
+    href="#services" 
+    className="flex-1 sm:flex-none text-center px-4 sm:px-6 py-3 rounded border border-slate-800 bg-slate-900/40 hover:bg-slate-900/80 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-white transition-all backdrop-blur whitespace-nowrap"
+  >
+    Explore Services
+  </a>
+</div>
       </div>
     </section>
   );
