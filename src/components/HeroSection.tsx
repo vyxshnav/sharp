@@ -23,7 +23,8 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section id="about" className="relative min-h-screen flex flex-col justify-center items-center px-6 pt-24 overflow-hidden">
+    // 🛠️ ഫിക്സ്: മൊബൈലിൽ pt-12 മാത്രമായി കുറച്ചു, ഡെസ്‌ക്‌ടോപ്പിൽ പഴയതുപോലെ pt-24 തന്നെ തുടരും
+    <section id="about" className="relative min-h-screen flex flex-col justify-center items-center px-6 pt-12 md:pt-24 overflow-hidden">
       
       {/* BACKGROUND BANNER SLIDER ENGINE */}
       <div className="absolute inset-0 z-0 bg-slate-950">
@@ -74,7 +75,8 @@ export default function HeroSection() {
       </div>
 
       {/* FOREGROUND CONTENT (TEXTS & BUTTONS) */}
-      <div className="text-center max-w-5xl z-10 flex flex-col items-center -translate-y-10 md:-translate-y-14">
+      {/* 🛠️ ഫിക്സ്: ഡെസ്‌ക്‌ടോപ്പിൽ പഴയതുപോലെ -translate-y-14 ആയിരിക്കും, മൊബൈലിൽ മാത്രം സ്പേസ് അഡ്ജസ്റ്റ് ചെയ്യാൻ -translate-y-4 ലേക്ക് മാറ്റി */}
+      <div className="text-center max-w-5xl z-10 flex flex-col items-center -translate-y-4 md:-translate-y-14">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -122,8 +124,6 @@ export default function HeroSection() {
           Powered by <span className="text-white font-bold">AI-optimized</span> process control, advanced <span className="text-white font-bold">Injection</span> and <span className="text-white font-bold">Blow Moulding</span>, Concept and Contract Manufacturing.
         </motion.p>
 
-        
-
         {/* CLICKABLE SLIDER DOTS INTERACTIVE NAVIGATION */}
         <div className="flex gap-2.5 mb-5 z-20">
           {banners.map((_, idx) => (
@@ -138,20 +138,20 @@ export default function HeroSection() {
           ))}
         </div>
 
-       <div className="flex flex-row gap-3 justify-center items-center w-full max-w-sm sm:max-w-none px-4 z-20">
-  <a 
-    href="#contact" 
-    className="flex-1 sm:flex-none text-center px-4 sm:px-6 py-3 rounded bg-orange-600 hover:bg-orange-700 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white transition-all shadow-lg shadow-orange-600/10 whitespace-nowrap"
-  >
-    Request A Quote
-  </a>
-  <a 
-    href="#services" 
-    className="flex-1 sm:flex-none text-center px-4 sm:px-6 py-3 rounded border border-slate-800 bg-slate-900/40 hover:bg-slate-900/80 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-white transition-all backdrop-blur whitespace-nowrap"
-  >
-    Explore Services
-  </a>
-</div>
+        <div className="flex flex-row gap-3 justify-center items-center w-full max-w-sm sm:max-w-none px-4 z-20">
+          <a 
+            href="#contact" 
+            className="flex-1 sm:flex-none text-center px-4 sm:px-6 py-3 rounded bg-orange-600 hover:bg-orange-700 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white transition-all shadow-lg shadow-orange-600/10 whitespace-nowrap"
+          >
+            Request A Quote
+          </a>
+          <a 
+            href="#services" 
+            className="flex-1 sm:flex-none text-center px-4 sm:px-6 py-3 rounded border border-slate-800 bg-slate-900/40 hover:bg-slate-900/80 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-white transition-all backdrop-blur whitespace-nowrap"
+          >
+            Explore Services
+          </a>
+        </div>
       </div>
     </section>
   );
