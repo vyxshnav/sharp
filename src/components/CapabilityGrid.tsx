@@ -9,25 +9,25 @@ const identities = [
     title: "Quality Oriented Company", 
     desc: "ISO 9001, ISO 13485 certified. Class 100000 clean room / quality floor operation.", 
     icon: <ShieldCheck className="w-6 h-6 text-orange-500" />,
-    bgImage: "/banner1.jpg" 
+    bgImage: "/qc.jpg" 
   },
   { 
     title: "Established in 2010", 
-    desc: "Based in Bangalore, India. 50+ employees with existing operational 15,000 sq. ft. own premises. 24x7 support capability.", 
+    desc: "Based in Bangalore, India. 150+ employees with existing operational 30,000 sq. ft. own premises. 24x7 support capability.", 
     icon: <Building2 className="w-6 h-6 text-orange-500" />,
-    bgImage: "/banner2.jpg" 
+    bgImage: "/sharporgbanner.jpg" 
   },
   { 
     title: "Focus on Business Values", 
-    desc: "80 - 220 tonnage injection moulding machines. 2ml - 2ltr blow moulding machine with Parrison controller.", 
+    desc: "80 - 250 tonnage injection moulding machines. 2ml - 5ltr blow moulding machine with Parrison controller.", 
     icon: <Cpu className="w-6 h-6 text-orange-500" />,
-    bgImage: "/banner3.jpg" 
+    bgImage: "/mold.png" 
   },
   { 
     title: "Committed To", 
     desc: "Successful outcomes. Achieve Zero UAT defect. 30% - 70% TCO Reduction across setups.", 
     icon: <Award className="w-6 h-6 text-orange-500" />,
-    bgImage: "/banner1.jpg" 
+    bgImage: "/shakehand.png"
   }
 ];
 
@@ -40,7 +40,7 @@ const services = [
 
 export default function CapabilityGrid() {
   return (
-    <section className="py-32 px-6 max-w-7xl mx-auto space-y-40">
+    <section className="py-12 sm:py-16 px-6 max-w-7xl mx-auto space-y-12 sm:space-y-16">
       
       {/* IDENTITY SECTION */}
       <div id="identity" className="w-full">
@@ -63,14 +63,15 @@ export default function CapabilityGrid() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -6 }}
-              className="premium-glass p-8 rounded-2xl flex flex-col justify-between relative h-[340px] overflow-hidden group border border-slate-900 hover:border-orange-600/40 shadow-2xl"
+              className="premium-glass p-8 rounded-2xl flex flex-col justify-between relative min-h-[300px] sm:h-[340px] overflow-hidden group border border-slate-900 hover:border-orange-600/40 shadow-2xl"
             >
               {/* BACKDROP IMAGE OVERLAY */}
-              <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-25 group-hover:scale-105 transition-all duration-700 pointer-events-none select-none">
+              <div className="absolute inset-0 z-0 opacity-100 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 pointer-events-none select-none">
                 <Image
                   src={item.bgImage}
                   alt={item.title}
                   fill
+                  sizes="100vw"
                   className="object-cover filter grayscale contrast-125 brightness-50"
                 />
               </div>

@@ -6,8 +6,9 @@ import Image from 'next/image';
 
 const banners = [
   { id: 1, src: '/sharporgbanner.jpg', title: 'Advanced Injection Moulding', subtitle: 'Precision Engineering' }, 
-  { id: 2, src: '/polymerbanner.jpg', title: 'High Volume Blow Moulding', subtitle: 'Automated Operations' },
-  { id: 3, src: '/qcengineers.jpg', title: 'Contract OEM Specialists', subtitle: 'Global Manufacturing' }
+  { id: 2, src: '/polymerbanner.jpg', title: 'High Volume Blow Moulding', subtitle: 'AI-Optimized Operations' },
+  { id: 3, src: '/qcengineers.jpg', title: 'Contract OEM Specialists', subtitle: 'Global Manufacturing' },
+  { id: 4, src: '/blowmolding.png', title: 'Contract OEM Specialists', subtitle: 'Global Manufacturing' }
 ];
 
 export default function HeroSection() {
@@ -39,6 +40,7 @@ export default function HeroSection() {
               src={banners[currentIndex].src}
               alt={banners[currentIndex].title}
               fill
+              sizes="100vw"
               className="object-cover filter contrast-115 opacity-20"
               priority
             />
@@ -72,19 +74,19 @@ export default function HeroSection() {
       </div>
 
       {/* FOREGROUND CONTENT (TEXTS & BUTTONS) */}
-      <div className="text-center max-w-5xl z-10 flex flex-col items-center -translate-y-4 md:-translate-y-6">
+      <div className="text-center max-w-5xl z-10 flex flex-col items-center -translate-y-10 md:-translate-y-14">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="mb-6 opacity-90"
+          className="mt-6 mb-6 opacity-90"
         >
-          <Image 
-            src="/sharpLogo (1).png" 
-            alt="Sharp Polymers Corporate Logo" 
-            width={220} 
-            height={70} 
-            className="object-contain filter drop-shadow-[0_0_15px_rgba(234,88,12,0.15)]"
+          <Image
+            src="/sharpLogo (1).png"
+            alt="Sharp Polymers Corporate Logo"
+            width={220}
+            height={70}
+            className="object-contain w-auto h-auto filter drop-shadow-[0_0_15px_rgba(234,88,12,0.15)] mt-5 mb-1"
             style={{ width: 'auto', height: 'auto' }}
             priority
           />
@@ -94,7 +96,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-slate-800 text-xs font-semibold tracking-wider text-slate-400 uppercase mb-8 backdrop-blur"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-slate-800 text-xs font-semibold tracking-wider text-slate-400 uppercase mb-1 -mt-12 backdrop-blur"
         >
           An ISO 9001, ISO 13485 & GMP Certified OEM Company
         </motion.div>
@@ -103,10 +105,10 @@ export default function HeroSection() {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="text-4xl md:text-7xl font-black tracking-tight text-white mb-8 leading-none uppercase"
+          className="text-4xl md:text-7xl font-black text-white mb-8 leading-none uppercase"
         >
-          Welcome To <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500 glow-orange">
+          <span className="tracking-wide">Welcome To</span> <br />
+          <span className="text-orange-600">
             Sharp Polymers
           </span>
         </motion.h1>
@@ -117,8 +119,10 @@ export default function HeroSection() {
           transition={{ delay: 0.5 }}
           className="text-sm sm:text-base md:text-lg text-slate-400 max-w-3xl mx-auto mb-3 uppercase tracking-widest leading-relaxed"
         >
-          Driven by innovative experiences of <span className="text-white font-bold">Injection</span> and <span className="text-white font-bold">Blow Moulding</span>, Concept and Contract Manufacturing.
+          Powered by <span className="text-white font-bold">AI-optimized</span> process control, advanced <span className="text-white font-bold">Injection</span> and <span className="text-white font-bold">Blow Moulding</span>, Concept and Contract Manufacturing.
         </motion.p>
+
+        
 
         {/* CLICKABLE SLIDER DOTS INTERACTIVE NAVIGATION */}
         <div className="flex gap-2.5 mb-5 z-20">
@@ -134,9 +138,12 @@ export default function HeroSection() {
           ))}
         </div>
 
-        <div className="flex w-full justify-center">
-          <a href="#services" className="w-full sm:w-auto text-center px-4 py-2 rounded bg-orange-600 hover:bg-orange-700 text-xs sm:text-sm font-bold uppercase tracking-widest text-white transition-all shadow-lg shadow-orange-600/10">
-            Our Services
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full">
+          <a href="#contact" className="w-full sm:w-auto text-center px-4 py-3 rounded bg-orange-600 hover:bg-orange-700 text-xs sm:text-sm font-bold uppercase tracking-widest text-white transition-all shadow-lg shadow-orange-600/10">
+            Request A Quote
+          </a>
+          <a href="#services" className="w-full sm:w-auto text-center px-4 py-3 rounded border border-slate-800 bg-slate-900/90 hover:bg-slate-800 text-xs sm:text-sm font-bold uppercase tracking-widest text-white transition-all shadow-lg shadow-slate-950/10">
+            Explore Services
           </a>
         </div>
       </div>

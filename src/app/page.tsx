@@ -1,22 +1,24 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import Navigation from "../components/Navigation";
 import HeroSection from "../components/HeroSection";
 import CapabilityGrid from "../components/CapabilityGrid";
 import ExperienceTimeline from "../components/ExperienceTimeline";
 
-// 24 premium client brands list
+
 const clientBrands = [
-  { name: "Tan90", logo: "/tan90.png" },
+  { name: "Himalaya", logo: "/himalayala.png" },
   { name: "Inito", logo: "/inito.png" },
   { name: "Merck", logo: "/merck.png" },
   { name: "Tata MD", logo: "/tatamd.png" },
+  { name: "Tan90", logo: "/tan90.png" },
+  { name: "Apollo", logo: "/apollo.jpg" },
   { name: "Hindustan Unilever Limited", logo: "/hul.webp" },
   { name: "Tulip Group", logo: "/tulip.png" },
   { name: "Antylia Scientific", logo: "/antylia.png" },
   { name: "Stericon", logo: "/stericon.png" },
   { name: "Aurolab", logo: "/aurolab.png" },
-  { name: "Himalaya", logo: "/himalayala.png" },
   { name: "Marico", logo: "/marico.png" },
   { name: "Indo-MIM", logo: "/Indo-MIM.png" },
   { name: "ibTech", logo: "/ibTech.png" },
@@ -30,7 +32,6 @@ const clientBrands = [
   { name: "Born Good", logo: "/borngood.png" },
   { name: "Pricol", logo: "/pricol.png" },
   { name: "Ubio", logo: "/ubio.png" },
-  { name: "Apollo", logo: "/apollo.jpg" },
 ];
 
 export default function Home() {
@@ -44,91 +45,175 @@ export default function Home() {
       <CapabilityGrid />
       <ExperienceTimeline />
 
-      {/* CLIENTS GRID SECTION (CLEAN IMAGES ONLY) */}
-      <section id="clients" className="py-20 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto border-t border-slate-900/60">
-        <div className="text-center mb-10">
-          <h2 className="text-xs uppercase font-bold tracking-widest text-orange-500 mb-2">Partnerships</h2>
-          <p className="text-3xl sm:text-4xl font-black text-white tracking-tight uppercase">Trusted By Global Leaders</p>
-        </div>
+      {/* CLIENTS GRID SECTION */}
+      <section id="clients" className="pt-4 pb-10 sm:pt-8 sm:pb-16 px-4 sm:px-6 max-w-7xl mx-auto border-t border-slate-900/60">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-8 sm:mb-10"
+        >
+          <h2 className="text-sm uppercase font-bold tracking-widest text-orange-500 mb-2">Partnerships</h2>
+          <p className="text-4xl sm:text-5xl font-black text-white tracking-tight uppercase mb-10">Trusted By Global Leaders</p>
+        </motion.div>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-5">
-          {clientBrands.map((brand, idx) => (
-            <div 
-              key={idx} 
-              className="premium-glass h-24 sm:h-28 p-4 sm:p-5 flex flex-col items-center justify-center rounded-2xl hover:border-slate-700 group transition-all duration-300 bg-slate-900/20 hover:bg-slate-900/60 relative overflow-hidden"
-            >
-              {/* Clean logo display layer */}
-              <div className="relative w-full h-full flex items-center justify-center opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 z-10">
-                {brand.logo ? (
-                  <img
-                    src={brand.logo}
-                    alt={brand.name}
-                    className="max-w-[100px] max-h-[60px] object-contain"
-                  />
-                ) : null}
-              </div>
-            </div>
-          ))}
+        <div className="grid grid-cols-4 gap-3 sm:grid-cols-6 sm:gap-4">
+          {clientBrands.map((brand, idx) => {
+            const isWipro = brand.name === 'Wipro';
+            const isNavagen = brand.name === 'Navagen';
+            const isAntylia = brand.name === 'Antylia Scientific';
+            const isPricol = brand.name === 'Pricol';
+            const sizeClass = isWipro
+              ? 'max-w-[90px] max-h-[58px] sm:max-w-[230px] sm:max-h-[140px] sm:scale-110'
+              : (isNavagen || isPricol)
+              ? 'max-w-[88px] max-h-[56px] sm:max-w-[200px] sm:max-h-[120px] sm:scale-105'
+              : isAntylia
+              ? 'max-w-[84px] max-h-[54px] sm:max-w-[160px] sm:max-h-[95px] sm:scale-105'
+              : 'max-w-[80px] max-h-[52px] sm:max-w-[140px] sm:max-h-[85px]';
+
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                whileHover={{ scale: 1.08, y: -5 }}
+                viewport={{ once: true, margin: '-30px' }}
+                transition={{ duration: 0.5, delay: idx * 0.04 }}
+                className="premium-glass h-28 sm:h-28 p-3 sm:p-4 flex items-center justify-center rounded-2xl group transition-all duration-300 relative overflow-hidden bg-gradient-to-br from-slate-950/95 via-slate-900/90 to-blue-950/40 border border-slate-700/70 hover:border-blue-500/30 shadow-[0_20px_50px_-30px_rgba(15,23,42,0.9)]"
+              >
+                <div className="relative w-full h-full flex items-center justify-center transition-all duration-300 z-10 group-hover:scale-105">
+                  {brand.logo ? (
+                    <img
+                      src={brand.logo}
+                      alt={brand.name}
+                      className={`relative object-contain brightness-105 contrast-125 ${sizeClass}`}
+                    />
+                  ) : null}
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent pointer-events-none" />
+              </motion.div>
+            );
+          })}
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-14 sm:py-16 px-4 sm:px-6 max-w-5xl mx-auto border-t border-slate-900">
-        <h2 className="text-xs uppercase font-bold tracking-widest text-orange-500 mb-8 text-center">Contact Us</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center text-xs tracking-wide">
-          <div className="premium-glass p-5 rounded-xl">
+      <section id="contact" className="py-12 sm:py-14 px-4 sm:px-6 max-w-5xl mx-auto border-t border-slate-900">
+        <motion.h2
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-xs uppercase font-bold tracking-widest text-orange-500 mb-6 text-center"
+        >
+          Contact Us
+        </motion.h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-center text-xs tracking-wide">
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            whileHover={{ scale: 1.05, y: -5 }}
+            viewport={{ once: true, margin: '-30px' }}
+            transition={{ duration: 0.5, delay: 0 }}
+            className="premium-glass p-4 sm:p-5 rounded-xl cursor-pointer"
+          >
             <p className="font-bold text-white mb-2 uppercase text-orange-500">Call Us</p>
-            <p className="text-slate-400 font-mono">+91-98452-10705</p>
-            <p className="text-slate-400 font-mono">+91-80-2783302</p>
-          </div>
-          <div className="premium-glass p-6 rounded-xl">
+            <a href="tel:+919845210705" className="text-slate-400 font-mono hover:underline">+91-98452-10705</a>
+            <a href="tel:+919448081705" className="block text-slate-400 font-mono hover:underline">+91-9448081705</a>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            whileHover={{ scale: 1.05, y: -5 }}
+            viewport={{ once: true, margin: '-30px' }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="premium-glass p-5 rounded-xl cursor-pointer"
+          >
             <p className="font-bold text-white mb-2 uppercase text-orange-500">Email Us</p>
-            <p className="text-slate-400 font-mono">SATHISH@SHARPPOLYMERS.COM</p>
-          </div>
-          <div className="premium-glass p-6 rounded-xl">
+            <a href="mailto:SATHISH@SHARPPOLYMERS.COM" className="text-slate-400 font-mono hover:underline">SATHISH@SHARPPOLYMERS.COM</a>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            whileHover={{ scale: 1.05, y: -5 }}
+            viewport={{ once: true, margin: '-30px' }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="premium-glass p-5 rounded-xl cursor-pointer"
+          >
             <p className="font-bold text-white mb-2 uppercase text-orange-500">Factory Address</p>
-            <p className="text-slate-400 leading-relaxed uppercase">
+            <a
+              href="https://maps.google.com/maps?q=Sharp%20Polymers%20Bommasandra%20Bangalore"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 leading-relaxed uppercase hover:underline block"
+            >
               No.173, 5th Cross, Bommasandra Indl Area, Bangalore - 560099, India
-            </p>
-          </div>
+            </a>
+          </motion.div>
         </div>
       </section>
-      
-      {/* SMALL PREMIUM MAP CARD */}
-      <section className="py-10 sm:py-12 px-4 sm:px-6 max-w-5xl mx-auto">
-        <div className="premium-glass relative overflow-hidden rounded-[32px] border border-slate-800/70 shadow-2xl shadow-slate-950/20">
+
+      {/* Map Section */}
+      <section className="py-8 sm:py-10 px-4 sm:px-6 max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.6 }}
+          className="premium-glass relative overflow-hidden rounded-[32px] border border-slate-800/70 shadow-2xl shadow-slate-950/20"
+        >
           <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent" />
           <div className="relative p-6 sm:p-8">
-            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-5">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-5"
+            >
               <div>
                 <p className="text-xs uppercase tracking-[0.35em] text-orange-500 font-semibold mb-2">Our Location</p>
                 <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight">Sharp Polymers, Bommasandra</h3>
               </div>
               <p className="text-xs md:text-sm text-slate-400 max-w-xl">
-                Premium manufacturing facility located in Bengaluru’s leading industrial hub. Visit us for contract OEM and precision polymer solutions.
+                Premium manufacturing facility located in Bengaluru's leading industrial hub. Visit us for contract OEM and precision polymer solutions.
               </p>
-            </div>
-            <div className="rounded-[24px] overflow-hidden border border-slate-900/70 shadow-[0_30px_80px_-50px_rgba(15,23,42,0.8)]">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="rounded-[24px] overflow-hidden border border-slate-900/70 shadow-[0_30px_80px_-50px_rgba(15,23,42,0.8)]"
+            >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.3400262198084!2d77.6917637!3d12.8212979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6c4e09f5db3b%3A0x6b77457788470a1a!2sSharp%20Polymers!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+                src="https://maps.google.com/maps?q=Sharp%20Polymers%20Bommasandra%20Bangalore&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 className="w-full h-[280px] sm:h-[320px] bg-slate-950"
                 allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Sharp Polymers Bommasandra Location Map"
               />
-            </div>
+            </motion.div>
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-transparent to-slate-950/40 pointer-events-none" />
-        </div>
+        </motion.div>
       </section>
 
+      {/* Footer Section */}
       <section className="px-6 max-w-5xl mx-auto mb-16">
-        <div className="premium-glass rounded-3xl border border-slate-800/70 p-6 text-center shadow-2xl shadow-slate-950/10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="premium-glass rounded-3xl border border-slate-800/70 p-6 text-center shadow-2xl shadow-slate-950/10"
+        >
           <p className="text-sm text-slate-300 leading-relaxed">
             © {new Date().getFullYear()} SHARP POLYMERS. ALL RIGHTS RESERVED. Built by Vaishnav.
           </p>
-        </div>
+        </motion.div>
       </section>
 
     </main>
