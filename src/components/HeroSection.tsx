@@ -76,7 +76,7 @@ export default function HeroSection() {
 
       {/* FOREGROUND CONTENT (TEXTS & BUTTONS) */}
       {/* 🛠️ ഫിക്സ്: ഡെസ്‌ക്‌ടോപ്പിൽ പഴയതുപോലെ -translate-y-14 ആയിരിക്കും, മൊബൈലിൽ മാത്രം സ്പേസ് അഡ്ജസ്റ്റ് ചെയ്യാൻ -translate-y-4 ലേക്ക് മാറ്റി */}
-      <div className="text-center max-w-5xl z-10 flex flex-col items-center -translate-y-2 md:-translate-y-14">
+      <div className="text-center max-w-5xl z-10 flex flex-col items-center -translate-y-0 md:-translate-y-14">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
