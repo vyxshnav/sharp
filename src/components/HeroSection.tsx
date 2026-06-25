@@ -23,7 +23,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    // 🛠️ ഫിക്സ്: മൊബൈലിൽ pt-12 മാത്രമായി കുറച്ചു, ഡെസ്‌ക്‌ടോപ്പിൽ പഴയതുപോലെ pt-24 തന്നെ തുടരും
+    
    <section id="about" className="relative min-h-screen flex flex-col justify-start md:justify-center items-center px-6 pt-8 md:pt-24 overflow-hidden">
       
       {/* BACKGROUND BANNER SLIDER ENGINE */}
@@ -58,9 +58,10 @@ export default function HeroSection() {
       <div className="absolute bottom-10 right-12 z-10 hidden md:block text-right max-w-xs">
         <AnimatePresence mode="wait">
           <motion.div
+            viewport={{ once: true }}
             key={currentIndex}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial="hidden"
+            whileInView="visible"
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.5 }}
           >
@@ -75,7 +76,7 @@ export default function HeroSection() {
       </div>
 
       {/* FOREGROUND CONTENT (TEXTS & BUTTONS) */}
-      {/* 🛠️ ഫിക്സ്: ഡെസ്‌ക്‌ടോപ്പിൽ പഴയതുപോലെ -translate-y-14 ആയിരിക്കും, മൊബൈലിൽ മാത്രം സ്പേസ് അഡ്ജസ്റ്റ് ചെയ്യാൻ -translate-y-4 ലേക്ക് മാറ്റി */}
+     
       <div className="text-center max-w-5xl z-10 flex flex-col items-center -translate-y-0 md:-translate-y-14">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -88,8 +89,7 @@ export default function HeroSection() {
             alt="Sharp Polymers Corporate Logo"
             width={220}
             height={70}
-            className="object-contain w-auto h-auto filter drop-shadow-[0_0_15px_rgba(234,88,12,0.15)] mt-5 mb-1"
-            style={{ width: 'auto', height: 'auto' }}
+            className="object-contain filter drop-shadow-[0_0_15px_rgba(234,88,12,0.15)] mt-5 mb-1"
             priority
           />
         </motion.div>
@@ -140,13 +140,15 @@ export default function HeroSection() {
 
         <div className="flex flex-row gap-3 justify-center items-center w-full max-w-sm sm:max-w-none px-4 z-20">
           <a 
-            href="#contact" 
+            href="#contact"
+            role="button"
             className="flex-1 sm:flex-none text-center px-4 sm:px-6 py-3 rounded bg-orange-600 hover:bg-orange-700 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white transition-all shadow-lg shadow-orange-600/10 whitespace-nowrap"
           >
             Request A Quote
           </a>
           <a 
-            href="#services" 
+            href="#services"
+            role="button"
             className="flex-1 sm:flex-none text-center px-4 sm:px-6 py-3 rounded border border-slate-800 bg-slate-900/40 hover:bg-slate-900/80 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-white transition-all backdrop-blur whitespace-nowrap"
           >
             Explore Services

@@ -249,7 +249,7 @@ export default function Home() {
           className="premium-glass rounded-3xl border border-slate-800/70 p-5 sm:p-6 text-center"
         >
           <p className="text-xs sm:text-sm text-slate-400 leading-relaxed tracking-wide uppercase">
-            © {new Date().getFullYear()} Sharp Polymers. All Rights Reserved.
+            © {new Date().getFullYear()} Sharp Polymers. All Rights Reserved. built by vaishnav
           </p>
         </motion.div>
       </footer>
