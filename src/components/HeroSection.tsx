@@ -24,7 +24,7 @@ export default function HeroSection() {
 
   return (
     
-   <section id="about" className="relative min-h-screen flex flex-col justify-start md:justify-center items-center px-6 pt-8 md:pt-24 overflow-hidden">
+   <section id="about" className="relative min-h-screen flex flex-col justify-center items-center px-6 pt-8 md:pt-24 overflow-hidden">
       
       {/* BACKGROUND BANNER SLIDER ENGINE */}
       <div className="absolute inset-0 z-0 bg-slate-950">
