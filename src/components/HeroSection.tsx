@@ -24,7 +24,7 @@ export default function HeroSection() {
 
   return (
     
-   <section id="about" className="relative flex flex-col justify-center items-center px-6 pt-28 pb-20 md:min-h-screen md:py-24 overflow-hidden">
+   <section id="about" className="relative min-h-screen flex flex-col justify-center items-center px-4 pt-20 md:pt-24 overflow-hidden">
       
       {/* BACKGROUND BANNER SLIDER ENGINE */}
       <div className="absolute inset-0 z-0 bg-slate-950">
@@ -77,19 +77,19 @@ export default function HeroSection() {
 
       {/* FOREGROUND CONTENT (TEXTS & BUTTONS) */}
      
-      <div className="text-center max-w-5xl z-10 flex flex-col items-center">
+      <div className="text-center max-w-5xl z-10 flex flex-col items-center -translate-y-12 md:-translate-y-14">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="mb-8 opacity-90"
+          className="mb-4 opacity-90"
         >
           <Image
             src="/sharpLogo (1).png"
             alt="Sharp Polymers Corporate Logo"
-            width={220}
-            height={70}
-            className="object-contain w-auto h-auto filter drop-shadow-[0_0_15px_rgba(234,88,12,0.15)]"
+            width={200}
+            height={60}
+            className="object-contain filter drop-shadow-[0_0_15px_rgba(234,88,12,0.15)]"
             priority
           />
         </motion.div>
@@ -98,7 +98,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-slate-800 text-xs font-semibold tracking-wider text-slate-400 uppercase mb-6 backdrop-blur"
+          className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/80 border border-slate-800 text-[10px] font-semibold tracking-wider text-slate-400 uppercase mb-4 backdrop-blur"
         >
           An ISO 9001, ISO 13485 & GMP Certified OEM Company
         </motion.div>
@@ -119,13 +119,13 @@ export default function HeroSection() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="text-base md:text-lg text-slate-400 max-w-3xl mx-auto mb-8 uppercase tracking-widest leading-relaxed"
+          className="text-sm md:text-base text-slate-400 max-w-3xl mx-auto mb-6 uppercase tracking-widest leading-relaxed"
         >
           Powered by <span className="text-white font-bold">AI-optimized</span> process control, advanced <span className="text-white font-bold">Injection</span> and <span className="text-white font-bold">Blow Moulding</span>, Concept and Contract Manufacturing.
         </motion.p>
 
         {/* CLICKABLE SLIDER DOTS INTERACTIVE NAVIGATION */}
-        <div className="flex gap-2.5 mb-8 z-20">
+        <div className="flex gap-2.5 mb-6 z-20">
           {banners.map((_, idx) => (
             <button
               key={idx}
@@ -138,18 +138,18 @@ export default function HeroSection() {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-xs sm:max-w-none px-4 z-20">
+        <div className="flex flex-col sm:flex-row gap-3 justify-center items-center w-full sm:w-auto px-4 z-20">
           <a 
             href="#contact"
             role="button"
-            className="w-full sm:w-auto text-center px-6 py-3.5 rounded-md bg-orange-600 hover:bg-orange-700 text-xs font-bold uppercase tracking-widest text-white transition-all shadow-lg shadow-orange-600/20 whitespace-nowrap"
+            className="w-full sm:w-auto text-center px-6 py-3 rounded bg-orange-600 hover:bg-orange-700 text-xs font-bold uppercase tracking-widest text-white transition-all shadow-lg shadow-orange-600/10 whitespace-nowrap"
           >
             Request A Quote
           </a>
           <a 
             href="#services"
             role="button"
-            className="w-full sm:w-auto text-center px-6 py-3.5 rounded-md border border-slate-800 bg-slate-900/40 hover:bg-slate-900/80 text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-white transition-all backdrop-blur whitespace-nowrap"
+            className="w-full sm:w-auto text-center px-6 py-3 rounded border border-slate-800 bg-slate-900/40 hover:bg-slate-900/80 text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-white transition-all backdrop-blur whitespace-nowrap"
           >
             Explore Services
           </a>
